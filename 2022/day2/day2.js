@@ -1,6 +1,6 @@
-import {readInput} from "../../utils/readInput.js";
+import {readInput} from "../../utils/index.js";
 
-const input = readInput().split("\n");
+const input = readInput().trim().split("\n");
 
 const win = {
   A : 'C',
@@ -23,7 +23,6 @@ const defaultValues = {
   C: 3,
 }
 let calculateFirstPart = (a,b) => {
-  if(!a || !b) return 0;
   if( a === b) return defaultValues[b] + 3;
   if(a === win[b]) return defaultValues[b] + 6;
   if(a === lose[b]) return defaultValues[b];
@@ -34,7 +33,6 @@ let firstPartResult = input.reduce((pre, curr) => {
 }, 0);
 
 let calculateSecondPart = (a,b) => {
-  if(!a || !b) return 0;
   if(b === 'B') return defaultValues[a] + 3;
   if(b === 'A') return defaultValues[win[a]];
   if(b === 'C') return defaultValues[lose[a]] + 6;
