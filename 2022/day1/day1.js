@@ -1,4 +1,4 @@
-import {readInput} from "../../utils/readInput.js";
+import {readInput} from "../../utils/index.js";
 
 const input = readInput().split("\n\n");
 
