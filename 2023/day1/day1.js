@@ -20,8 +20,8 @@ const arrDict = Object.entries(dict).map(([key, val]) => ({
 
 const parsePuzzle = (puzzle) => puzzle.split('').reduce((parsed, c) => {
   parsed += c;
-  const dict = arrDict.find(dict => parsed.includes(dict.word));
-  if(dict){
+  const exist = arrDict.find(dict => parsed.includes(dict.word));
+  if(exist){
     parsed = parsed.replace(dict.word.slice(0, -1), dict.number)
   }
   return parsed;
