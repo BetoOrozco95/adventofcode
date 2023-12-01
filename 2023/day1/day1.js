@@ -22,7 +22,7 @@ const parsePuzzle = (puzzle) => puzzle.split('').reduce((parsed, c) => {
   parsed += c;
   const exist = arrDict.find(dict => parsed.includes(dict.word));
   if(exist){
-    parsed = parsed.replace(dict.word.slice(0, -1), dict.number)
+    parsed = parsed.replace(exist.word.slice(0, -1), exist.number)
   }
   return parsed;
 }, '')
@@ -40,3 +40,4 @@ const resolve = (puzzleInput, withParse) => puzzleInput.reduce((sum, puzzle) => 
 
 console.log(`Result part one: ${resolve(input)}`);
 console.log(`Result part two: ${resolve(input, true)}`);
+
